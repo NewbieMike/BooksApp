@@ -10,6 +10,9 @@
         },
         containerOf: {
             bookList: '.books-list'
+        },
+        imageOf: {
+            imageBook: '.book__image'
         }
     };
     //2. Dodaj nową funkcję render.
@@ -37,8 +40,26 @@
 
     render();
 
+    favoriteBooks = [];
     function initActions() {
-        console.log('initActions');
+        const thisBooks = this;
+
+        const booksImg = document.querySelectorAll(select.imageOf.imageBook);
+        
+        console.log(booksImg);
+        
+        for (let bookImg of booksImg){
+            bookImg.addEventListener('dblclick', function (event){
+                event.preventDefault();
+                bookImg.classList.add('favorite');
+
+                const bookId = bookImg.getAttribute('data-id');
+                console.log('data-id ', bookId)
+                favoriteBooks.push(bookId);
+                console.log(favoriteBooks);
+            })
+        }
+       
     }
 
     initActions();
