@@ -39,7 +39,7 @@ dataSource.books = [
     name: 'You don\'t know JS',
     image: 'images/books/4.jpg',
     price: 40,
-    rating: 8.2,
+    rating: 8.1,
     details: {
       adults: false,
       nonFiction: true
